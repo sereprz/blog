@@ -1,7 +1,7 @@
 ---
 title: "RC, batch 2 day 1"
 date: 2020-03-30T20:28:12-04:00
-draft: true
+draft: false
 ---
 
 Today is the first day of my second batch at the [Recurse Centre](https://www.recurse.com/).
