@@ -1,5 +1,5 @@
 ---
-title: "RC, batch 2 day 1"
+title: "RC batch 2 day 1"
 date: 2020-03-30T20:28:12-04:00
 draft: false
 ---
