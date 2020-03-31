@@ -1,0 +1,38 @@
+baseurl = "http://example.org/"
+languageCode = "en-us"
+Title = "Words"
+theme = "hugo_theme_pickles"
+# Copyright notice. This is displayer in the footer.
+copyright = "&copy; Copyright notice"
+custom_css = "/static/css/custom.css"
+
+# Google Analytics API key.
+googleAnalytics = "Your Google Analytics tracking id"
+
+[params]
+  paginate = 10
+  # Social accounts. Link to these accounts are displayed in the header and
+  # footer
+  twitter = "sereprz"
+  github = "sereprz"
+  # Short subtitle/tagline. This is displayed in the header.
+  subtitle = "Short subtitle"
+  
+[related]
+  # Only include matches with rank >= threshold. This is a normalized rank between 0 and 100.
+  threshold = 80
+
+  [[related.indices]]
+  name = "keywords"
+  weight = 150
+  [[related.indices]]
+  name  = "author"
+  toLower = true
+  weight = 30
+  [[related.indices]]
+  name  = "tags"
+  weight = 100
+  [[related.indices]]
+  name  = "date"
+  weight = 10
+  pattern = "2017"
