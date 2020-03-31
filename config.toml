@@ -1,18 +1,4 @@
 baseurl = ""
 languageCode = "en-us"
 title = "Words"
-theme=  "anubis"
-
-menu:
-  main:
-  - identifier: archive
-    name: Archive
-    title: Archive
-    url: /posts/
-    weight: 0
-
-params:
-  author: ""
-  description: ""
-  images:
-    - images/og-featured.png
+theme =  "anubis"
