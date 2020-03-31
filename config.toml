@@ -1,4 +1,18 @@
-baseurl = "https://objective-booth-499ed3.netlify.com"
+baseurl = ""
 languageCode = "en-us"
 title = "Words"
 theme=  "anubis"
+
+menu:
+  main:
+  - identifier: archive
+    name: Archive
+    title: Archive
+    url: /posts/
+    weight: 0
+
+params:
+  author: ""
+  description: ""
+  images:
+    - images/og-featured.png
