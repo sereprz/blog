@@ -1,4 +1,4 @@
-baseurl = "http://example.org/"
+baseurl = "https://gracious-ride-adae32.netlify.com"
 languageCode = "en-us"
 title = "Words"
 theme=  "anubis"
