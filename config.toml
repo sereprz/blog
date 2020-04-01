@@ -1,4 +1,5 @@
 baseurl = "https://words.serenaperuzzo.com"
 languageCode = "en-us"
 title = "Words"
-theme=  "anubis"
+theme =  "anubis"
+paginate = 6
