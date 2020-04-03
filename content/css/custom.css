@@ -1,0 +1,21 @@
+a, a:hover {
+    color: #007399;
+}
+
+blockquote {
+    
+    border-color: #007399;
+}
+
+a,a:hover {
+    color: #007399;
+}
+
+.post .draft-label {
+    color: #007399;
+}
+
+.post-tags .tags a {
+    border: 1px solid #007399;
+    color: #007399;
+}

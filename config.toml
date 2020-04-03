@@ -1,8 +1,42 @@
 baseurl = "https://gracious-ride-adae32.netlify.com"
 languageCode = "en-us"
 title = "Words"
-theme=  "anubis"
+theme=  "ezhil"
+
+copyright = "© Serena Peruzzo 2020"
 
 [params]
-   author = "SP"
-   description = "Anubis is a simple minimalist theme for Hugo blog engine."
+   subtitle = ""
+	# disableDisqusTypes = ["page"]
+	featherIconsCDN = true
+	# mode = "dark" # "dark", "auto", "light"
+	customCSS = "/css/custom.css"  # Custom CSS applied to default styles.
+	customDarkCSS = "css/dark-custom.css"  # Custom styles applied to dark mode css.
+	# customJS = ["https://code.jquery.com/jquery-3.4.1.js", "js/custom1.js"]  # Custom JS scripts.
+
+
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "All posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "About"
+url = "https://www.serenaperuzzo.com/"
+weight = 3
+
+[[params.social]]
+name = "Github"
+icon = "github"
+url = "https://github.com/sereprz"
+
+[[params.social]]
+name = "RSS"
+icon = "rss"
+url = "/index.xml"
