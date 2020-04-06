@@ -1,5 +1,5 @@
 ---
-title: "Javascript is Weird Part I: Array Comparison"
+title: "Javascript is Weird Part I: Comparing Arrays"
 date: 2020-04-04T23:18:19-04:00
 draft: false
 ---
