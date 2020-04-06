@@ -1,12 +1,17 @@
 baseurl = "https://words.serenaperuzzo.com"
 languageCode = "en-us"
-title = "Words"
+title = "serena peruzzo"
 theme=  "ezhil"
+summaryLength = 30
 
 copyright = "© Serena Peruzzo 2020"
 
+pygmentsstyle = "murphy" # see https://xyproto.github.io/splash/docs/ for styles
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
 [params]
-   subtitle = ""
+    subtitle = "data geek, food lover, travel junkie"
 	# disableDisqusTypes = ["page"]
 	featherIconsCDN = true
 	# mode = "dark" # "dark", "auto", "light"
@@ -14,22 +19,20 @@ copyright = "© Serena Peruzzo 2020"
 	customDarkCSS = "css/dark-custom.css"  # Custom styles applied to dark mode css.
 	# customJS = ["https://code.jquery.com/jquery-3.4.1.js", "js/custom1.js"]  # Custom JS scripts.
 
-
-
 [[menu.main]]
 name = "Home"
 url = "/"
 weight = 1
 
 [[menu.main]]
-name = "All posts"
+name = "Archive"
 url = "/posts"
 weight = 2
 
-[[menu.main]]
-name = "About"
-url = "https://www.serenaperuzzo.com/"
-weight = 3
+[[params.social]]
+name = "Twitter"
+icon = "twitter"
+url = "https://twitter.com/sereprz"
 
 [[params.social]]
 name = "Github"
