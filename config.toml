@@ -25,15 +25,24 @@ url = "/"
 weight = 1
 
 [[menu.main]]
+name = "About"
+url = "/about"
+weight = 2
+
+[[menu.main]]
 name = "Archive"
 url = "/posts"
-weight = 2
+weight = 3
 
 [[menu.main]]
 name = "Speaking"
 url = "/talks"
-weight = 3
+weight = 4
 
+[[menu.main]]
+name = "Writing"
+url = "/writing"
+weight = 5
 
 [[params.social]]
 name = "Twitter"
