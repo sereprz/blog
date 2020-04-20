@@ -29,6 +29,12 @@ name = "Archive"
 url = "/posts"
 weight = 2
 
+[[menu.main]]
+name = "Speaking"
+url = "/talks"
+weight = 3
+
+
 [[params.social]]
 name = "Twitter"
 icon = "twitter"
