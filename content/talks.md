@@ -5,7 +5,7 @@ title: Talks and Workshops
 * [PyTexas 2020](https://www.pytexas.org/) (October 24th & 25th), Feature engineering: the dark magic behind data science
 * [Oπe conf 2020](https://www.pytexas.org/) (October 2020), Feature engineering: the dark magic behind data science
 * [Women in Data Science Silicon Valley 2020](https://events.sap.com/us/wids-2020-sv/en/home) (June 2020), Making Prophecies with Data: Introduction to Time-Series Forecasting and Recent Developments
-* [csv, conf, v5](https://csvconf.com/) (May 13th & 14th), Improving law interpretability using NLP
+* [csv, conf, v5](https://csvconf.com/), Improving law interpretability using NLP ([video](https://www.crowdcast.io/e/csvconf5-0-session-2/), [slides](https://github.com/sereprz/improving-interpretability-with-nlp/))
 * [PyLadies/PyData](https://www.meetup.com/PyLadies-Toronto/) 2020 Kick-off, Improving Law Interpretability with NLP
 * [PyCon Canada 2019](https://2019.pycon.ca/), From Hot Mess To Information ([slides](https://github.com/sereprz/from-hot-mess-to-information))
 * [Polyhack](https://www.meetup.com/polyhackTO/) 24, From Hot Mess To Information
