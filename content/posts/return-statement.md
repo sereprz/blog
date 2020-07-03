@@ -1,7 +1,7 @@
 ---
 title: "Return Statement: reflections on Spring 2'20 and beyond"
-date: 2020-06-30T19:15:27-04:00
-draft: true
+date: 2020-07-03T19:15:27-04:00
+draft: false
 ---
 
 I spent the last 12 weeks in the Spring 2'20 batch at the [Recurse Center](https://www.recurse.com/). This was my second time at RC and between a pandemic, and the world being generally on fire, it's been a wild ride. This is an attempt at reflecting on the last 3 months, and how things have changed since my first batch, which was almost exactly 5 years ago, in the Spring of 2015.
@@ -20,29 +20,33 @@ Spring 2'20 was different in many ways. Virtual RC has a lot of the good things 
 
 #### March 30 - May 8
 
-The first 6 weeks back at RC were, in short, delightful. This time I knew what to expect and jumped right into it. Knowing that there was a job on the other side meant that I could spend my time on learning things I don't normally do at work. Like web development, and learning obscure programming languages. One of my goals was to pair more and be more public about my work - two things I didn't do much of in my first batch. I had also been working remotely for 4-5 years and thought I could help making virtual RC feel more like real life RC.
+The first 6 weeks were, in short, delightful. This time I knew what to expect and jumped right into it. Knowing that there was a job on the other side meant that I could spend my time on learning things I don't normally do at work. Like web development, and learning obscure programming languages. One of my goals was to pair more and be more public about my work - two things I didn't do much of in my first batch. I had also been working remotely for 4-5 years and thought I could help making virtual RC feel more like real life RC.
 
 During the first few weeks, I invested a lot of energy into getting to know my batchmates. Social relationships have been a  fundamental part of my RC experience throughout the years and I didn't want them to be missing from the virtual experience. I subscribed to chat-bot, a bot that every day pairs you up with a different Recurser for a chat, and reached out to anyone that seemed shy, had overlapping interests or was working on something I was curious about. A good way to find out what others are working on is to go to the daily checkins - short meetings were everyone shares what they've been working on in the last day or so and what they plan on doing next, so I made sure to go every day. This was also a good way to add structure to the day. I didn't regularly participate in the machine learning discussions as this felt too work related for the scope of this batch, but I did offer advice and help whenever I could. The faculty held regular feedback sessions for virtual RC and I participated in most of them while having parallel conversations with other folks that were invested in making virtual RC feel like real life RC.
 
-Socially speaking, I met some pretty wonderful humans, and made strong connections that I know will last for a long time. Regular events like Music Consumption Group, and Late Night Lurking and Movie night were, and still are, real highlights of my week! As 5 years ago, the best part of RC has turned to be its humans: incredibly thoughtful, kind, stimulating people.
+Socially speaking, I met some pretty wonderful humans, and made strong connections that I know will last for a long time. Regular events like Music Consumption Group, and Late Night Lurking and Movie night were, and still are, real highlights of my week! As 5 years ago, the best part of RC turned out to be its humans: incredibly thoughtful, kind, stimulating people.
 
-This was by far the best part of the batch. Even with the pandemic raging outside, and all the uncertainty brought by it, I felt happy and productive, and my energy level were through the roof. Here's a non exhaustive list of things I did during the first 6 weeks, in no particular order.
+This was by far the best part of the batch. Even with the pandemic raging outside, and all the uncertainty brought by it, I felt happy and productive, and my energy level was through the roof. Here's a non exhaustive list of things I did during the first 6 weeks, in no particular order.
 
 * Started a blog
-* Paired on a javascript implementation of Conway's game of Life.
+* Paired on a javascript implementation of [Conway's Game of Life](https://github.com/sereprz/game-of-life).
 * Learned React.
 * Hosted biweekly [Papers We Love](https://paperswelove.org/) events.
-* Paired on building a Flask api that would serve "happy data" to a React frontend.
-* Published a write up of my PyCon Canada 2019 talk.
+* Paired on building a Flask api that would serve "[happy data](https://github.com/sereprz/happy-data)" to a React frontend.
+* Published a [write up](https://towardsdatascience.com/from-hot-mess-to-information-d97419c2ffea) of my PyCon Canada 2019 talk.
 * Scraped ontario.ca for all the laws currently active in Ontario and parsed their text into a format useful for analysis.
 * Learned about readability metrics.
 * Learned some basic K and paired on implementing KMeans in K.
-* Hosted a workshop on getting started with public speaking and writing a talk proposal.
+* Hosted a [workshop](https://docs.google.com/presentation/d/1Pj2UtJCNuen_t6Ol8KtV_pFaq5oLqKzVvqlqP4_eJsw/edit?usp=sharing) on getting started with public speaking and writing a talk proposal.
 * Made [tricky colors](https://colors.serenaperuzzo.com/), a React version of a color perception game I originally built in Python for my first RC application.
 
 #### Never Graduate Week
 
-In the words of the RC faculty, Never Graduate Week is the _yearly alumni reunion, where you can spend a week working at the edge of your programming abilities, meeting alumni from other batches, and reliving your glory days at RC_. NGW is always exchiting and emotionally exhausting, and it's been a highlight of my year ever since my first never graduation. Virtual NGW was even busier and involved than usual. I was speaking at [csv, conf](https://csvconf.com/) and continued to pair on K while organising a few events and participating in all the others. It was great! But by the end of it I was really tired and this definitely had an impact on my ability to focus for the following weeks.
+In the words of the RC faculty, Never Graduate Week is the _yearly alumni reunion, where you can spend a week working at the edge of your programming abilities, meeting alumni from other batches, and reliving your glory days at RC_. 
+
+NGW is always exchiting and emotionally exhausting, and it's been a highlight of my year ever since my first never graduation. Virtual NGW was even busier and involved than usual. I was speaking at [csv, conf](https://csvconf.com/) and continued to pair on K while organising a few events and participating in all the others.
+
+It was great! But by the end of it I was really tired and this definitely had an impact on my ability to focus for the following weeks.
 
 #### May 27 - June 26
 
@@ -54,8 +58,9 @@ However, most of my time at this point went either into hosting and participatin
 * Hosted a weekly meeting for the Techincal Writing and Speaking Group
 * Hosted more Papers We Love events.
 * Hosted several rounds of Chat Roulette.
+* Build a [frontend](https://github.com/sereprz/on-laws) to visualize readability score of laws as a heatmap
 * Paired on implementing domain-specific (legal) [word embeddings](https://en.wikipedia.org/wiki/Word_embedding).
-* Co-Presented _The meaning of K_ at [EnthusiatiCon](https://www.enthusiasticon.de/).
+* Co-Presented [The meaning of K](https://github.com/sereprz/the-meaning-of-k) at EnthusiatiCon.
 
 #### Looking back and looking forward
 
