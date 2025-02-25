@@ -4,14 +4,12 @@ title = "serena peruzzo"
 theme=  "ezhil"
 summaryLength = 30
 
-copyright = "© Serena Peruzzo 2020"
-
 pygmentsstyle = "murphy" # see https://xyproto.github.io/splash/docs/ for styles
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
 [params]
-    subtitle = "data geek, food lover, travel junkie"
+    subtitle = "I like bikes, computers, and food. Not always in this order."
 	# disableDisqusTypes = ["page"]
 	featherIconsCDN = true
 	# mode = "dark" # "dark", "auto", "light"
@@ -45,8 +43,8 @@ url = "/writing"
 weight = 5
 
 [[params.social]]
-name = "Twitter"
-icon = "twitter"
+name = "Bluesky"
+icon = "Bluesky"
 url = "https://twitter.com/sereprz"
 
 [[params.social]]

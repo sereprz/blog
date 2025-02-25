@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Javascript is Weird Part I: Comparing Arrays - serena peruzzo</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:url" content="http://localhost:1313/posts/weird-js-p1/">
+  <meta property="og:site_name" content="serena peruzzo">
+  <meta property="og:title" content="Javascript is Weird Part I: Comparing Arrays">
+  <meta property="og:description" content="Javascript is weird.
+I worked in Python for the last 5 years, and in R for the 3 years before, mostly for data science applications, and I didn’t realise how much I was taking for granted until I started playing around with Javascript and spending a lot of time just wondering why!">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-04-04T23:18:19-04:00">
+    <meta property="article:modified_time" content="2020-04-04T23:18:19-04:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Javascript is Weird Part I: Comparing Arrays">
+  <meta name="twitter:description" content="Javascript is weird.
+I worked in Python for the last 5 years, and in R for the 3 years before, mostly for data science applications, and I didn’t realise how much I was taking for granted until I started playing around with Javascript and spending a lot of time just wondering why!">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="http://localhost:1313//css/custom.css" />
+	
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="http://localhost:1313/js/main.js"></script>
+	<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="http://localhost:1313/">serena peruzzo</a></h1>
+	<div class="site-description"><h2>I like bikes, computers, and food. Not always in this order.</h2><nav class="nav social">
+			<ul class="flat"><a href="https://twitter.com/sereprz" title="Bluesky"><i data-feather="Bluesky"></i></a><a href="https://github.com/sereprz" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Archive</a>
+			</li>
+			
+			<li>
+				<a href="/talks">Speaking</a>
+			</li>
+			
+			<li>
+				<a href="/writing">Writing</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Javascript is Weird Part I: Comparing Arrays</h1>
+			
+			<div class="meta">Posted at &mdash; Apr 4, 2020</div>
+			
+		</div>
+
+		<div class="markdown">
+			<p>Javascript is weird.</p>
+<p>I worked in Python for the last 5 years, and in R for the 3 years before, mostly for data science applications, and I didn&rsquo;t realise how much I was taking for granted until I started playing around with Javascript and spending a lot of time just wondering <strong>why!</strong></p>
+<p>I was pairing with Asa on <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway&rsquo;s Game of Life</a> earlier this week and ran into something weird. In our implementation, the game stops when <code>currentGameState === nextGameState</code>, where <code>currentGameState</code> and <code>nextGameState</code> represent respectively (surprise!) the current state of the game&rsquo;s grid and the following one. Except the game didn&rsquo;t stop. Ever.</p>
+<p>It turns out, in Javascript <code>currentGameState === nextGameState</code> returns <code>false</code> even if the two arrays look exactly the same. This was counterintuitive to me but I followed Asa&rsquo;s lead and we wrote a helper function that takes two arrays, <code>a</code> and <code>b</code>, as input and performs a few tests to determine if they are indeed the same. Here&rsquo;s the function:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#289;font-weight:bold">function</span> arraysEqual(a, b) {
+</span></span><span style="display:flex;"><span>  <span style="color:#289;font-weight:bold">if</span> (a <span style="color:#333">===</span> b) <span style="color:#289;font-weight:bold">return</span> <span style="color:#289;font-weight:bold">true</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#289;font-weight:bold">if</span> (a <span style="color:#333">==</span> <span style="color:#289;font-weight:bold">null</span> <span style="color:#333">||</span> b <span style="color:#333">==</span> <span style="color:#289;font-weight:bold">null</span>) <span style="color:#289;font-weight:bold">return</span> <span style="color:#289;font-weight:bold">false</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#289;font-weight:bold">if</span> (a.length <span style="color:#333">!=</span> b.length) <span style="color:#289;font-weight:bold">return</span> <span style="color:#289;font-weight:bold">false</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#289;font-weight:bold">for</span> (<span style="color:#289;font-weight:bold">let</span> i <span style="color:#333">=</span> <span style="color:#66f;font-weight:bold">0</span>; i <span style="color:#333">&lt;</span> a.length; <span style="color:#333">++</span>i) {
+</span></span><span style="display:flex;"><span>    <span style="color:#289;font-weight:bold">if</span> (<span style="color:#289;font-weight:bold">typeof</span> a[i] <span style="color:#333">===</span> <span style="background-color:#e0e0ff">&#34;object&#34;</span>){
+</span></span><span style="display:flex;"><span>      <span style="color:#289;font-weight:bold">if</span> (arraysEqual(a[i], b[i]) <span style="color:#333">==</span> <span style="color:#289;font-weight:bold">false</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#289;font-weight:bold">return</span> <span style="color:#289;font-weight:bold">false</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    } <span style="color:#289;font-weight:bold">else</span> <span style="color:#289;font-weight:bold">if</span> (a[i] <span style="color:#333">!==</span> b[i]){
+</span></span><span style="display:flex;"><span>      <span style="color:#289;font-weight:bold">return</span> <span style="color:#289;font-weight:bold">false</span>
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#289;font-weight:bold">return</span> <span style="color:#289;font-weight:bold">true</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Let&rsquo;s unpack this.</p>
+<p>Step <strong>1</strong>: if <code>a</code> and <code>b</code> are of the same <strong>type</strong> and hold the same <strong>value</strong> return <code>true</code>.</p>
+<p>Step <strong>2</strong>. if either <code>a</code> or <code>b</code> is <code>null</code> return <code>false</code>.</p>
+<p>Step <strong>3</strong>. If <code>a</code> and <code>b</code> have different lengths return <code>false</code>.</p>
+<p>Step <strong>4</strong>. Loop through all elements of <code>a</code> and compare each of them to the corresponding element in <code>b</code>, thus making sure that each element has exactly the same value and the same position in both arrays.</p>
+<p>This worked, but I was still very confused as to <strong>why</strong> <code>a === b</code> would return <code>false</code> even when <code>a</code> and <code>b</code> were identical arrays, so I checked <a href="https://developer.mozilla.org/en-US/">MDN Web Docs</a> and found <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators">this</a>:</p>
+<blockquote>
+<p>The identity operator returns true if the operands are strictly equal (see above) with no type conversion.</p>
+</blockquote>
+<p>More confusion followed,  until I found <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness">this</a>:</p>
+<blockquote>
+<p>Note that the distinction between these all have to do with their handling of primitives; none of them compares whether the parameters are conceptually similar in structure. For any non-primitive objects x and y which have the same structure but are distinct objects themselves, all of the above forms will evaluate to false.</p>
+</blockquote>
+<p>Basically, primitive types like <em>strings</em> and <em>numbers</em> are compared by their value, while objects like <em>arrays</em>, <em>dates</em>, and <em>plain objects</em> are compared by their reference. In other words, our two game states are <em>arrays</em> that point to <strong>different</strong> locations in memory, so the comparison <code>currentGameState === nextGameState</code> is never <code>true</code>.</p>
+<p>I still haven&rsquo;t figured out <strong>why</strong> but at least I understand <strong>what</strong> it&rsquo;s doing and it was fun to investigate!</p>
+<p>I come across stuff like this in Javascript <strong>all</strong> the time so I&rsquo;m sure there&rsquo;ll be more posts like this to come.</p>
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+		</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

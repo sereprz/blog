@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Return Statement: reflections on Spring 2&#39;20 and beyond - serena peruzzo</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:url" content="http://localhost:1313/posts/return-statement/">
+  <meta property="og:site_name" content="serena peruzzo">
+  <meta property="og:title" content="Return Statement: reflections on Spring 2&#39;20 and beyond">
+  <meta property="og:description" content="I spent the last 12 weeks in the Spring 2&#39;20 batch at the Recurse Center. This was my second time at RC and between a pandemic, and the world being generally on fire, it’s been a wild ride.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-07-03T19:15:27-04:00">
+    <meta property="article:modified_time" content="2020-07-03T19:15:27-04:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Return Statement: reflections on Spring 2&#39;20 and beyond">
+  <meta name="twitter:description" content="I spent the last 12 weeks in the Spring 2&#39;20 batch at the Recurse Center. This was my second time at RC and between a pandemic, and the world being generally on fire, it’s been a wild ride.">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="http://localhost:1313//css/custom.css" />
+	
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="http://localhost:1313/js/main.js"></script>
+	<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="http://localhost:1313/">serena peruzzo</a></h1>
+	<div class="site-description"><h2>I like bikes, computers, and food. Not always in this order.</h2><nav class="nav social">
+			<ul class="flat"><a href="https://twitter.com/sereprz" title="Bluesky"><i data-feather="Bluesky"></i></a><a href="https://github.com/sereprz" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Archive</a>
+			</li>
+			
+			<li>
+				<a href="/talks">Speaking</a>
+			</li>
+			
+			<li>
+				<a href="/writing">Writing</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Return Statement: reflections on Spring 2&#39;20 and beyond</h1>
+			
+			<div class="meta">Posted at &mdash; Jul 3, 2020</div>
+			
+		</div>
+
+		<div class="markdown">
+			<p>I spent the last 12 weeks in the Spring 2'20 batch at the <a href="https://www.recurse.com/">Recurse Center</a>. This was my second time at RC and between a pandemic, and the world being generally on fire, it&rsquo;s been a wild ride. This is an attempt at reflecting on the last 3 months, and how things have changed since my first batch, which was almost exactly 5 years ago, in the Spring of 2015.</p>
+<p>RC is a magical place where you go to become a better programmer. What that means is entirely up to you, as RC is completely self directed. One of the main pre-requisites is that you have <em>some</em> experience programming (more on RC and admission <a href="https://www.recurse.com/about">here</a> and <a href="https://www.recurse.com/faq">here</a>) but Recursers have extraordinary diverse backgrounds: some are fresh out of college, while others have 5-10 years of experience or are transitioning from other industries. This diversity and a super welcoming environment have made RC one of the best educational experiences I&rsquo;ve ever had!</p>
+<p>The first time I went to RC, I planned months and months in advance. I was moving back to Europe after living in Australia for 3 years. I had spent a lot of time working in R and I was learning Python, and I was hoping to get my first job as a data scientist (spoiler alert - it worked). I didn&rsquo;t really know what to expect, but RC was everything I&rsquo;d hoped for and more! I came out of it feeling so much more confident in my technical skills and having built some really great friendships.</p>
+<p>This time I didn&rsquo;t plan at all! Earlier this year, I signed an offer for a new shiny job as a data scientist in Toronto, where I&rsquo;d been living for just under 2 years. My start date was set for early April, because that was the earliest Immigration could process a work permit, so in early March I resigned from my last job. My plan was to have a couple of weeks off, maybe travel a little, and then start the new job. A week later Canada closed its borders, making the processing of my work permit much longer, and pushing my start date to <em>some time in the summer</em>.</p>
+<p>Most people would&rsquo;ve been distressed. I was thrilled. RC had moved to virtual and I couldn&rsquo;t think of a better way to spend a lockdown than going back for a new batch!</p>
+<p>I still can&rsquo;t.</p>
+<p>Spring 2'20 was different in many ways. Virtual RC has a lot of the good things of RC but also more challenges. For me, this meant that the first 6 weeks were deeply different from the last half of the batch.</p>
+<h4 id="march-30---may-8">March 30 - May 8</h4>
+<p>The first 6 weeks were, in short, delightful. This time I knew what to expect and jumped right into it. Knowing that there was a job on the other side meant that I could spend my time on learning things I don&rsquo;t normally do at work. Like web development, and learning obscure programming languages. One of my goals was to pair more and be more public about my work - two things I didn&rsquo;t do much of in my first batch. I had also been working remotely for 4-5 years and thought I could help making virtual RC feel more like real life RC.</p>
+<p>During the first few weeks, I invested a lot of energy into getting to know my batchmates. Social relationships have been a  fundamental part of my RC experience throughout the years and I didn&rsquo;t want them to be missing from the virtual experience. I subscribed to chat-bot, a bot that every day pairs you up with a different Recurser for a chat, and reached out to anyone that seemed shy, had overlapping interests or was working on something I was curious about. A good way to find out what others are working on is to go to the daily checkins - short meetings were everyone shares what they&rsquo;ve been working on in the last day or so and what they plan on doing next, so I made sure to go every day. This was also a good way to add structure to the day. I didn&rsquo;t regularly participate in the machine learning discussions as this felt too work related for the scope of this batch, but I did offer advice and help whenever I could. The faculty held regular feedback sessions for virtual RC and I participated in most of them while having parallel conversations with other folks that were invested in making virtual RC feel like real life RC.</p>
+<p>Socially speaking, I met some pretty wonderful humans, and made strong connections that I know will last for a long time. Regular events like Music Consumption Group, and Late Night Lurking and Movie night were, and still are, real highlights of my week! As 5 years ago, the best part of RC turned out to be its humans: incredibly thoughtful, kind, stimulating people.</p>
+<p>This was by far the best part of the batch. Even with the pandemic raging outside, and all the uncertainty brought by it, I felt happy and productive, and my energy level was through the roof. Here&rsquo;s a non exhaustive list of things I did during the first 6 weeks, in no particular order.</p>
+<ul>
+<li>Started a blog</li>
+<li>Paired on a javascript implementation of <a href="https://github.com/sereprz/game-of-life">Conway&rsquo;s Game of Life</a>.</li>
+<li>Learned React.</li>
+<li>Hosted biweekly <a href="https://paperswelove.org/">Papers We Love</a> events.</li>
+<li>Paired on building a Flask api that would serve &ldquo;<a href="https://github.com/sereprz/happy-data">happy data</a>&rdquo; to a React frontend.</li>
+<li>Published a <a href="https://towardsdatascience.com/from-hot-mess-to-information-d97419c2ffea">write up</a> of my PyCon Canada 2019 talk.</li>
+<li>Scraped ontario.ca for all the laws currently active in Ontario and parsed their text into a format useful for analysis.</li>
+<li>Learned about readability metrics.</li>
+<li>Learned some basic K and paired on implementing KMeans in K.</li>
+<li>Hosted a <a href="https://docs.google.com/presentation/d/1Pj2UtJCNuen_t6Ol8KtV_pFaq5oLqKzVvqlqP4_eJsw/edit?usp=sharing">workshop</a> on getting started with public speaking and writing a talk proposal.</li>
+<li>Made <a href="https://colors.serenaperuzzo.com/">tricky colors</a>, a React version of a color perception game I originally built in Python for my first RC application.</li>
+</ul>
+<h4 id="never-graduate-week">Never Graduate Week</h4>
+<p>In the words of the RC faculty, Never Graduate Week is the <em>yearly alumni reunion, where you can spend a week working at the edge of your programming abilities, meeting alumni from other batches, and reliving your glory days at RC</em>.</p>
+<p>NGW is always exchiting and emotionally exhausting, and it&rsquo;s been a highlight of my year ever since my first never graduation. Virtual NGW was even busier and involved than usual. I was speaking at <a href="https://csvconf.com/">csv, conf</a> and continued to pair on K while organising a few events and participating in all the others.</p>
+<p>It was great! But by the end of it I was really tired and this definitely had an impact on my ability to focus for the following weeks.</p>
+<h4 id="may-27---june-26">May 27 - June 26</h4>
+<p>I started the second half of the batch pretty tired. My energy level was fluctuating and while I knew I needed more rest and self care I was too excited for the start of a new batch, so I continued to be heavily involved in social and group activities for at least a couple more weeks. I started going to co-working events, where we&rsquo;d have quick rounds of checkins, followed by some focused work, followed by a show and tell. These events were great for getting things done and I felt very productive.</p>
+<p>However, most of my time at this point went either into hosting and participating in group events, or in personal chats. Eventually zoom fatigue caught up on me and focusing became increasingly hard. My work permit also came thourgh unexpectedly early, and even though I managed to push my start day to July, I felt a lot more pressure for writing code and doing machine learning. I cut my zoom time quite a bit and tried to focus on pairing projects, but I ended up spending the last 3 weeks of the batch feeling incredibly tired and distracted. This was the hardest part of the batch, as I was torn between the need for more self care and the fear that I wasn&rsquo;t making the most of my time at RC, so the list of things I did is considerably shorter.</p>
+<ul>
+<li>Deployed tricky colors.</li>
+<li>Hosted a weekly meeting for the Techincal Writing and Speaking Group</li>
+<li>Hosted more Papers We Love events.</li>
+<li>Hosted several rounds of Chat Roulette.</li>
+<li>Build a <a href="https://github.com/sereprz/on-laws">frontend</a> to visualize readability score of laws as a heatmap</li>
+<li>Paired on implementing domain-specific (legal) <a href="https://en.wikipedia.org/wiki/Word_embedding">word embeddings</a>.</li>
+<li>Co-Presented <a href="https://github.com/sereprz/the-meaning-of-k">The meaning of K</a> at EnthusiatiCon.</li>
+</ul>
+<h4 id="looking-back-and-looking-forward">Looking back and looking forward</h4>
+<p>This batch was was easier and more challenging at the same time.</p>
+<p>It was easier to feel part of the community, and navigate the day to day of managing my time and figuring out how to prioritize. It was harder, because so much of RC is serendipitous and doesn&rsquo;t translate well to online tools.</p>
+<p>Less than a week away from the official end, I&rsquo;m still processing a lot of feelings, especially those related to burning out, but overall I feel good about how I spent my time: exploring aspects of programming that I don&rsquo;t get to see in my daily job, and investing in the community. I feel especially grateful that I got to interact with such a wonderful, intellectually engaging group of people through these weird times.</p>
+<p>After my first batch I felt sad and nostalgic. This time, I feel ready to move on to the next challenge, knowing that the RC experience doesn&rsquo;t end with Spring 2, and that I&rsquo;ll continue to be connected with this amazing community and learn from it.</p>
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+		</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>
