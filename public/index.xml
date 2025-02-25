@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>serena peruzzo</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on serena peruzzo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 25 Feb 2025 15:26:45 -0500</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Of Toronto the Good, 127 year later</title>
+      <link>http://localhost:1313/posts/of-toronto-the-good/</link>
+      <pubDate>Tue, 25 Feb 2025 15:26:45 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/of-toronto-the-good/</guid>
+      <description>Writing essays was my favorite thing school activity, which does not explain why I ended up studying stats, or why I completely stopped writing, but it does explain why I&amp;rsquo;ve been making an effort to re-build a writing practice.</description>
+    </item>
+    
+    <item>
+      <title>Posts</title>
+      <link>http://localhost:1313/posts/</link>
+      <pubDate>Tue, 25 Feb 2025 15:26:45 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Return Statement: reflections on Spring 2&#39;20 and beyond</title>
+      <link>http://localhost:1313/posts/return-statement/</link>
+      <pubDate>Fri, 03 Jul 2020 19:15:27 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/return-statement/</guid>
+      <description>I spent the last 12 weeks in the Spring 2&#39;20 batch at the Recurse Center. This was my second time at RC and between a pandemic, and the world being generally on fire, it&amp;rsquo;s been a wild ride.</description>
+    </item>
+    
+    <item>
+      <title>Full Circle</title>
+      <link>http://localhost:1313/posts/full-circle/</link>
+      <pubDate>Mon, 18 May 2020 16:47:36 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/full-circle/</guid>
+      <description>When I applied to RC in 2015 I didn&amp;rsquo;t have any code that was public, so I wrote a small color-perception game in python. Here&amp;rsquo;s the original repository.
+It&amp;rsquo;s a pretty simple game.</description>
+    </item>
+    
+    <item>
+      <title>Visualising language complexity</title>
+      <link>http://localhost:1313/posts/readability-heatmap/</link>
+      <pubDate>Thu, 23 Apr 2020 17:45:00 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/readability-heatmap/</guid>
+      <description>A little over a year ago, as part of my jobby-job as a consultant, I worked on a proof of concept that explored the possibility of using natural language processing to extract and analyse burdens (obligations) from the Accessibility for Ontarians with Disabilities Act (AODA) (more details about that in this article and this video).</description>
+    </item>
+    
+    <item>
+      <title>Javascript is Weird Part I: Comparing Arrays</title>
+      <link>http://localhost:1313/posts/weird-js-p1/</link>
+      <pubDate>Sat, 04 Apr 2020 23:18:19 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/weird-js-p1/</guid>
+      <description>Javascript is weird.
+I worked in Python for the last 5 years, and in R for the 3 years before, mostly for data science applications, and I didn&amp;rsquo;t realise how much I was taking for granted until I started playing around with Javascript and spending a lot of time just wondering why!</description>
+    </item>
+    
+    <item>
+      <title>RC batch 2 day 1</title>
+      <link>http://localhost:1313/posts/day-1/</link>
+      <pubDate>Mon, 30 Mar 2020 20:28:12 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/day-1/</guid>
+      <description>Today is the first day of my second batch at the Recurse Centre.
+My first batch was in the spring of 2015 and it was a life-changing experience, not just for all the things I learned (a lot), but also for all the wonderful people I&amp;rsquo;ve met during and after my time in NYC.</description>
+    </item>
+    
+  </channel>
+</rss>

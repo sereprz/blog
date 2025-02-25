@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Visualising language complexity - serena peruzzo</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:url" content="http://localhost:1313/posts/readability-heatmap/">
+  <meta property="og:site_name" content="serena peruzzo">
+  <meta property="og:title" content="Visualising language complexity">
+  <meta property="og:description" content="A little over a year ago, as part of my jobby-job as a consultant, I worked on a proof of concept that explored the possibility of using natural language processing to extract and analyse burdens (obligations) from the Accessibility for Ontarians with Disabilities Act (AODA) (more details about that in this article and this video).">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-04-23T17:45:00-04:00">
+    <meta property="article:modified_time" content="2020-04-23T17:45:00-04:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Visualising language complexity">
+  <meta name="twitter:description" content="A little over a year ago, as part of my jobby-job as a consultant, I worked on a proof of concept that explored the possibility of using natural language processing to extract and analyse burdens (obligations) from the Accessibility for Ontarians with Disabilities Act (AODA) (more details about that in this article and this video).">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="http://localhost:1313//css/custom.css" />
+	
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="http://localhost:1313/js/main.js"></script>
+	<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="http://localhost:1313/">serena peruzzo</a></h1>
+	<div class="site-description"><h2>I like bikes, computers, and food. Not always in this order.</h2><nav class="nav social">
+			<ul class="flat"><a href="https://twitter.com/sereprz" title="Bluesky"><i data-feather="Bluesky"></i></a><a href="https://github.com/sereprz" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/posts">Archive</a>
+			</li>
+			
+			<li>
+				<a href="/talks">Speaking</a>
+			</li>
+			
+			<li>
+				<a href="/writing">Writing</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Visualising language complexity</h1>
+			
+			<div class="meta">Posted at &mdash; Apr 23, 2020</div>
+			
+		</div>
+
+		<div class="markdown">
+			<p>A little over a year ago, as part of my jobby-job as a consultant, I worked on a proof of concept that explored the possibility of using natural language processing to extract and analyse burdens (obligations) from the <a href="https://www.ontario.ca/laws/statute/05a11">Accessibility for Ontarians with Disabilities Act</a> (AODA) (more details about that in <a href="https://towardsdatascience.com/using-nlp-to-understand-laws-95278624ae5">this article</a> and <a href="https://www.youtube.com/watch?v=c-WTaLX4QzU">this video</a>). Recently, I&rsquo;ve been thinking about how that approach could be fine tuned and extended to be used to extract useful information from the legislation, and, in doing so, make it more accessible to the public.</p>
+<p>As part of this, I&rsquo;ve been thinking a lot about what are the barriers to understanding laws - what makes them less than accessible. I think that language complexity and ambiguity are big factors, so I decided to explore ways they can be quantified.</p>
+<p>It turns out that academics have been thinking about how to measure readability since the late 1800s with early methods relying on word frequencies, which evolved into full on formulas from the mid 1920s. One of the most popular is the Flesch <a href="https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests#Flesch_reading_ease">reading ease score</a>:</p>
+<p>$$206.835 - 1.015 \left(\frac{\mbox{total words}}{\mbox{total sentences}}\right) - 84.6 * \left(\frac{\mbox{total syllables}}{\mbox{total words}}\right)$$</p>
+<p>A higher score indicates material there is easier to read. A lower score indicates passages that are more complex.
+The highest readability score possible is 121.22, and it can only be achieved if every sentence consists of only one one-syllable word. However, there is no lower bound on the score so that it can potentially be made arbitrarily low by using long sentences with many syllables.</p>
+<p>Based on my previous work on AODA I have some hypothesys around which sections are more ambiguous and overall harder to read, so I computed the Flesch reading ease score for each section and built what I&rsquo;m calling a heatmap of readability. This basically means squishing the text to fit entirely into the screen and coloring the background of each section according to <a href="https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests">this table</a>. Here&rsquo;s what it looks like.</p>
+<p><img src="/static/aoda-heatmap.png" alt="aoda-heatmap"></p>
+<p>In this picture, darker greens represent lower scores, with the darkest being scores below 0. The average score is ~18 but the minimum is as as low as -197 and only about 40% of the sections score above 30 (though not by much), which is the upper bound for college graduate level texts. For comparison, Time magazine has an average readibility index of about 52 and falls into the 10th to 12th grade level.</p>
+<p>The next step, in order to verify my hypothesis, is to combine readability indices with topic analysis and compare them across laws. I think some interesting patterns will emerge from it.</p>
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+		</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>
